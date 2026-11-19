@@ -1,0 +1,51 @@
+schema: spec-driven
+
+context: |
+  Proyecto: Plataforma de Red Social Orientada a la Privacidad.
+  Stack: Node.js + Express, SQLite3 (better-sqlite3 o sqlite3), HTML5, CSS3 y JavaScript Vanilla (sin frameworks de frontend).
+  Arquitectura: monolito ligero cliente-servidor de 3 capas (presentación, negocio y datos).
+
+  Documentación fuente en documentos/:
+    - especificaci_n_de_requerimientos_de_software (1).md (SRS: RF, RNF y RN)
+    - documento_de_arquitectura_de_software (1).md (SAD: capas y estructura de directorios)
+    - est_ndares_y_convenciones_de_desarrollo (1).md (nomenclatura, API y seguridad)
+    - gu_a_de_dise_o_de_interfaz_frontend (1).md (UI/UX, paleta y componentes)
+
+  Convenciones clave:
+    - JavaScript: camelCase para variables y funciones, PascalCase para clases, UPPER_SNAKE_CASE para constantes.
+    - Archivos JS en camelCase.js; archivos HTML/CSS en kebab-case.
+    - SQLite: tablas y columnas en snake_case.
+    - Endpoints REST en kebab-case y plural, versionados: /api/v1/...
+    - Respuestas exitosas: {"status":"success","data":{...}}.
+    - Respuestas de error: {"status":"error","code":400,"message":"..."}.
+    - SQL únicamente con sentencias preparadas; PRAGMA foreign_keys = ON en cada conexión.
+    - Contraseñas con bcrypt (saltRounds >= 10); nunca en texto plano.
+    - Frontend sin estilos inline y sin frameworks de JavaScript.
+
+  Language: Spanish
+  All artifacts must be written in Spanish.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+
+rules:
+  proposal:
+    - Identifica los requerimientos del SRS afectados (RF, RNF, RN).
+    - Declara el alcance y lo que queda fuera de la propuesta.
+    - Mantén la propuesta por debajo de 500 palabras.
+  specs:
+    - Cada requerimiento debe usar SHALL o MUST y tener al menos un escenario WHEN/THEN.
+    - Mantén los requerimientos alineados con el SRS y con las capacidades existentes en openspec/specs/.
+  design:
+    - Respeta la arquitectura de 3 capas y la estructura de directorios del SAD.
+    - Incluye el impacto en seguridad y privacidad (autenticación, hashing, filtros de visibilidad y SQL preparado).
+  tasks:
+    - Divide las tareas en pasos pequeños y verificables.
+    - Incluye tareas de validación con "openspec validate" y pruebas manuales o automatizadas.
+
+operations:
+  apply:
+    guidance:
+      - Sigue los estándares de documentos/est_ndares_y_convenciones_de_desarrollo (1).md.
+      - No marques una tarea como completa sin verificar que el código funciona.
+  archive:
+    guidance:
+      - Resume qué se implementó y qué requerimientos quedaron actualizados.

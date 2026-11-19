@@ -1,0 +1,44 @@
+{
+  "name": "red-social-privacidad",
+  "version": "1.0.0",
+  "description": "Plataforma de red social orientada a la privacidad (Node.js, Express, SQLite3 y frontend vanilla).",
+  "private": true,
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "spec:view": "openspec view",
+    "spec:list": "openspec list",
+    "spec:validate": "openspec validate --all",
+    "spec:update": "openspec update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o74517859-lab/Sistemas.git"
+  },
+  "keywords": [
+    "red-social",
+    "privacidad",
+    "sdd",
+    "openspec"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/o74517859-lab/Sistemas/issues"
+  },
+  "homepage": "https://github.com/o74517859-lab/Sistemas#readme",
+  "devDependencies": {
+    "@fission-ai/openspec": "^1.17.0",
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3"
+  }
+}
